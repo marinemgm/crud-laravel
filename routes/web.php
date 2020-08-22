@@ -16,6 +16,7 @@ Route::get('/', function(){
     return view ('welcome');
 });
 
+Route::middleware('auth')->group(function () {
 // Route::get('pessoas', 'PessoaController@index');
 // Route::get('pessoas/create', 'PessoaController@create');
 // Route::post('pessoas', 'PessoaController@store');
@@ -25,6 +26,8 @@ Route::get('/', function(){
 // Route::delete('pessoas/{pessoa}', 'PessoaController@destroy');
 
 Route::resource('pessoas', 'PessoaController');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
