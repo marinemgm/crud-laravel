@@ -1,12 +1,13 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+@extends('template.master')
 
+@section('titulo', 'Lista de Pessoas')  
+
+@section('conteudo')
 <h1>Pessoas Cadastradas</h1>
 
 <a class="btn btn-primary" href="/pessoas/create">Cadastrar Nova</a>
 
 <hr>
-
-
 
 <table class="table table-bordered">
     <tr>
@@ -23,12 +24,8 @@
         <td>
             <a href="/pessoas/{{ $p->id }}/edit">Editar</a>
             <a href="/pessoas/{{ $p->id }}">Excluir</a>
-            {{-- <form action="/pessoas/{{$p->id}}" method="post">
-                @csrf
-                @method('DELETE')
-                <input type="submit" value="Excluir">
-            </form> --}}
         </td>
     </tr>
     @endforeach
 </table>
+@endsection
